@@ -133,5 +133,5 @@ else
    echo -e "          BY мσнαммє∂ нιѕнαм                                    \033[0;00m"
    echo -e "\e[36m"
   rm -r ../.telegram-cli/state #Prevent tg from crash
-  ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./bot/TH3BOSS.lua -l 1 -E $@
+  ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./bot/TeleBoss.lua -l 1 -E $@
 fi
