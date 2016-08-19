@@ -848,11 +848,10 @@ end
 end
 return {
 patterns = {
-"^(الرابط خاص)$",
+"^(linksl)$",
 "%[(photo)%]",
 "^!!tgservice (.+)$",
 },
 run = run
 }
 end
--- arabic : @SAJJADNOORI
