@@ -1,6 +1,5 @@
- 💢 DEV TH3_BOSS 💢
- كيفيةتيليسيدحديث الاخير 2016
- 
+ 💢 DEV TeleBoss 💢
+كيفية تنصيب بوت تليسيد 2016 
 ```sh
 
  Let's install the bot.
