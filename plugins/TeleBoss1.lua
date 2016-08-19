@@ -19,8 +19,8 @@ setowner - لرفع مدير
 setadmin - لرفع ادمن
 setpremote - لرفع اداري
 ➖🔺➖🔺➖🔺➖🔺➖
-deladmin - لتنزيل ادمن 
-delpremote - لتنزيل اداري 
+delladmin - لتنزيل ادمن 
+dellpremote - لتنزيل اداري 
 ➖🔺➖🔺➖🔺➖🔺➖
 owner - عرض مدير المجموعة
 admins - عرض الادمنية
