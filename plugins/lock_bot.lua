@@ -7,6 +7,7 @@
 ▀▄ ▄▀      ANTI BOT   : منع بوتات            ▀▄ ▄▀ 
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
 --]]
+
 local function isAntiBotEnabled (chatId)
   local hash = 'bot:lock:'..chatId
   local lock = redis:get(hash)
@@ -40,7 +41,7 @@ local user = 'user#id'..userId
   end, {chat=chat, user=user})
 end
 
-local function mohammed (msg, matches)
+local function run (msg, matches)
 
   if matches[1] ~= 'chat_add_user' and matches[1] ~= 'chat_add_user_link' then
     if msg.to.type ~= 'chat' and msg.to.type ~= 'channel' then
@@ -49,13 +50,13 @@ local function mohammed (msg, matches)
   end
 
   local chatId = msg.to.id
-  if matches[1] == 'قفل البوتات' then
+  if matches[1] == 'lock bot' then
     enableAntiBot(chatId)
-  return 'تم ☑️ قفل 🔒 اضافه البوتات ✋😽\n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
+  return 'It was lock bots'
   end
-  if matches[1] == 'فتح البوتات' then
+  if matches[1] == 'open bot' then
     disableAntiBot(chatId)
-  return 'تم ☑️ فتح 🔓 اضافه البوتات ✋😽\n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
+  return 'It was unlock bots'
   end
   if matches[1] == 'chat_add_user' or matches[1] == 'chat_add_user_link' then
     local user = msg.action.user or msg.from
@@ -81,10 +82,10 @@ return {
     '/bot unlock: unlock add bots to supergroup'
   },
   patterns = {
-    '^(قفل البوتات)$',
-    '^(فتح البوتات)$',
+    '^(lock bot)$',
+    '^(open bot)$',
     '^!!tgservice (chat_add_user)$',
     '^!!tgservice (chat_add_user_link)$'
   },
-  run = mohammed
+  run = run
 }
