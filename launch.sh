@@ -129,7 +129,7 @@ else
    echo -e "     > DEV : MOHAMMED HISHAM                                             "
    echo -e "     > DEV : @TH3BOSS                                                "
    echo -e "     > Bot ID : DEV : @ll60Kllbot                             "
-   echo -e "     > Github : https://github.com/moody2020/TH3BOSS    "
+   echo -e "     > Github :https://github.com/moody2020/TeleBoss   "
    echo -e "          BY мσнαммє∂ нιѕнαм                                    \033[0;00m"
    echo -e "\e[36m"
   rm -r ../.telegram-cli/state #Prevent tg from crash
