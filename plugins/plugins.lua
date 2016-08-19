@@ -162,12 +162,12 @@ end
 
 local function run(msg, matches)
   -- Show the available plugins 
-  if matches[1] == 'الملفات' and is_sudo(msg) then --after changed to moderator mode, set only sudo
+  if matches[1] == 'files' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     return list_all_plugins()
   end
 
   -- Re-enable a plugin for this chat
-  if matches[1] == 'تفعيل ملف' and matches[3] == 'chat' then
+  if matches[1] == 'addfile' and matches[3] == 'chat' then
     local receiver = get_receiver(msg)
     local plugin = matches[2]
     print("enable "..plugin..' on this chat')
@@ -175,14 +175,14 @@ local function run(msg, matches)
   end
 
   -- Enable a plugin
-  if matches[1] == 'تفعيل ملف' and is_sudo(msg) then --after changed to moderator mode, set only sudo
+  if matches[1] == 'addfile' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     local plugin_name = matches[2]
     print("enable: "..matches[2])
     return enable_plugin(plugin_name)
   end
 
   -- Disable a plugin on a chat
-  if matches[1] == 'تعطيل ملف' and matches[3] == 'chat' then
+  if matches[1] == 'remfile' and matches[3] == 'chat' then
     local plugin = matches[2]
     local receiver = get_receiver(msg)
     print("disable "..plugin..' on this chat')
@@ -190,7 +190,7 @@ local function run(msg, matches)
   end
 
   -- Disable a plugin
-  if matches[1] == 'تعطيل ملف' and is_sudo(msg) then --after changed to moderator mode, set only sudo
+  if matches[1] == 'renfile' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     if matches[2] == 'plugins' then
     	return 'This plugin can\'t be disabled'
     end
@@ -199,7 +199,7 @@ local function run(msg, matches)
   end
 
   -- Reload all the plugins!
-  if matches[1] == 'الملفات المفعله' and is_sudo(msg) then --after changed to moderator mode, set only sudo
+  if matches[1] == 'active files' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     return reload_plugins(true)
   end
 end
@@ -218,12 +218,12 @@ return {
           "!plugins reload : reloads all plugins." },
           },
   patterns = {
-    "^الملفات$",
-    "^(تفعيل ملف) ([%w_%.%-]+)$",
-    "^(تعطيل ملف) ([%w_%.%-]+)$",
-    "^(تفعيل ملف) ([%w_%.%-]+) (chat)",
-    "^(تعطيل ملف) ([%w_%.%-]+) (chat)",
-    "^(الملفات المفعله)$" },
+    "^files$",
+    "^(addfile) ([%w_%.%-]+)$",
+    "^(remfile) ([%w_%.%-]+)$",
+    "^ (addfile) ([%w_%.%-]+) (chat)",
+    "^(addfile) ([%w_%.%-]+) (chat)",
+    "^(active files)$" },
   run = run,
   moderated = true, -- set to moderator mode
   --privileged = true
