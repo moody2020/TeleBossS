@@ -1,5 +1,4 @@
  💢 DEV TeleBoss 💢
-كيفية تنصيب بوت تليسيد 2016 
 ```sh
 
  Let's install the bot.
