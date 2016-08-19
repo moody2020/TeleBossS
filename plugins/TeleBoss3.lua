@@ -20,10 +20,12 @@ lock links - قفل الروابط
 lock photo - قفل الصور
 lock audio - الصوت الصور
 lock video - قفل الفيديو 
+lock rtl - قفل الاضافه 
+lock addrtl - قفل الاضافه الجماعيه 
 lock flood - قفل التكرار 
 lock spam - قفل الكلايش 
 lock fwd - قفل اعاده توجيه 
-lock bots - قفل البوتات 
+lock bot - قفل البوتات 
 lock media - قفل الوسائط 
 lock gifs - قفل الصور المتحركه 
 lock emoji - قفل الملصقات 
@@ -39,7 +41,7 @@ open video - فتح الفيديو
 open flood - فتح التكرار 
 open spam - فتح الكلايش 
 open fwd - فتح اعاده توجيه 
-open bots - فتح البوتات 
+open bot - فتح البوتات 
 open media - فتح الوسائط 
 open gifs - فتح الصور المتحركه 
 open emoji - فتح الملصقات 
