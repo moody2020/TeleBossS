@@ -10,7 +10,7 @@
 local function addword(msg, name)
     local hash = 'chat:'..msg.to.id..':badword'
     redis:hset(hash, name, 'newword')
-    return "تـم  ☑️ اضافه كلمه جديده الى قائمه المنع  ❌👍\n>"..name
+    return "☑️ been added a new word to the block list  ❌👍\n>"..name
 end
 
 local function get_variables_hash(msg)
@@ -24,7 +24,7 @@ local function list_variablesbad(msg)
 
   if hash then
     local names = redis:hkeys(hash)
-local text = '❌✋🏻 قائمه المنع الكلمات المحطوره ❌👍 :\n\n'
+local text = '❌✋🏻 Block list of banned words ❌👍 :\n\n'
     for i=1, #names do
       text = text..'> '..names[i]..'\n'
     end
@@ -38,7 +38,7 @@ function clear_commandbad(msg, var_name)
   --Save on redis  
   local hash = get_variables_hash(msg)
   redis:del(hash, var_name)
-  return 'تـم ☑️ تـنـظـيـف قائمه الـمنـع 👍🙊'
+  return '☑️ been cleaning block list 👍🙊'
 end
 
 local function list_variables2(msg, value)
@@ -76,7 +76,7 @@ function clear_commandsbad(msg, cmd_name)
   --Save on redis  
   local hash = get_variables_hash(msg)
   redis:hdel(hash, cmd_name)
-  return ''..cmd_name..'  تم  ☑️ الغاهها من قامه الـمـنـع 👍'
+  return ''..cmd_name..'  ☑️ been canceled the prohibition 👍'
 end
 
 local function run(msg, matches)
@@ -91,11 +91,11 @@ local function run(msg, matches)
   end
   if matches[2] == 'list block' then
   return list_variablesbad(msg)
-  elseif matches[2] == 'del block' then
+  elseif matches[2] == 'clean list block' then
 if not is_momod(msg) then return '_|_' end
   local asd = '1'
     return clear_commandbad(msg, asd)
-  elseif matches[2] == 'open block' or matches[2] == 'rw' then
+  elseif matches[2] == 'unblock' or matches[2] == 'rw' then
    if not is_momod(msg) then return '_|_' end
     return clear_commandsbad(msg, matches[3])
   else
@@ -109,9 +109,9 @@ return {
   patterns = {
   "^()(rw) (.*)$",
   "^()(block) (.*)$",
-   "^()(open block) (.*)$",
+   "^()(unblock) (.*)$",
     "^()(list block)$",
-    "^()(del block)$",
+    "^()(clean list block)$",
 "^(.+)$",
 	   
   },
