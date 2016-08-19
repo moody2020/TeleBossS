@@ -11,30 +11,28 @@ do
 
 local function mohammed(msg, matches)
 local reply_id = msg['id']
-if is_sudo(msg) and matches[1]== "م المطور" then
+if is_sudo(msg) and matches[1]== "sodo" then
 local S = [[  💯 اوامر المطورين 💯
 
-🔸➖🔹➖🔸➖🔹➖🔸ـ
+➖🔺➖🔺➖🔺➖🔺➖
 
- 📫تفعيل  : ↝↜
+ 📫add : ↝↜
  {لتفعيل البوت ب المجموعه}
- 📫تعطيل : ↝↜
+ 📫rem : ↝↜
  {لتعطيل البوت ب المجموعه}
- 📫اذاعه : ↝↜
+ 📫اsend : ↝↜
  {لنشر كلمه ب جميع مجموعات البوت}
- 📫تشغيل البوت : ↝↜
+ 📫on bot : ↝↜
 { لتشغيل البوت ب المجموعه معينه}
- 📫طرد البوت : ↝↜
+ 📫leave bot : ↝↜
 { لطرد البوت من المجموعه}
- 📫جلب ملف : ↝↜
+ 📫get file : ↝↜
 { لجلب الملف من السيرفر}
- 📫صنع مجموعه : ↝↜
+ 📫create group : ↝↜
 {لصنع مجموعه من البوت}
-  📫مسح المعرف  : ↝↜
-{لمسح معرف المجموعه}
- 📫مسح الادمنيه : ↝↜
+ 📫clean admins : ↝↜
 {لمسح الادمنيه في المجموعه}
- 📫مسح الاداريين : ↝↜
+ 📫clean premotes : ↝↜
 {لمسح الاداريين في المجموعه}
 📫run : ↝↜
 {لتنشيط سيرفر البوت}
@@ -43,7 +41,7 @@ local S = [[  💯 اوامر المطورين 💯
 📫redis: ↝↜
 {لعمل رديس لسيرفر البوت}
 
-🔸➖🔹➖🔸➖🔹➖
+➖🔺➖🔺➖🔺➖🔺➖
 💯-Đєⱴ💀: @TH3BOSS
 💯-Đєⱴ ฿๏ͳ💀: @ll60Kllbot
 💯-Đєⱴ Ϲḫ₳ͷͷєℓ💀: @llDEV1ll
@@ -52,7 +50,7 @@ reply_msg(reply_id, S, ok_cb, false)
 end
 
 if not is_sudo(msg) then
-local S = "ليش تبحبش😎🖕🏿"
+local S = "Developers Only🖕🏿"
 reply_msg(reply_id, S, ok_cb, false)
 end
 
@@ -61,7 +59,7 @@ return {
 description = "Help list", 
 usage = "Help list",
 patterns = {
-"^(م المطور)$",
+"^(sodo)$",
 },
 run = mohammed 
 }
