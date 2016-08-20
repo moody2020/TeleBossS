@@ -1,12 +1,11 @@
 TΞΛM BФSS 🛡
 
 🛡 channel [℡ TΞΛM BФSS🛡](https://telegram.me/llDEV1ll)
+
 🌐DEV : @TH3BOSS
 
 🔺➖🔺➖🔺➖🔺➖
-
 كيفيه تنصيب  TeleBoss  
-
 #نسخه_انكلش_لمحبي_وعشاق_الانكلش 
 🔺➖🔺➖🔺➖🔺➖
 
